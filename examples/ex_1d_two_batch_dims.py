@@ -45,7 +45,7 @@ if __name__ == "__main__":
     y = torch.Tensor(y)
 
     x = x.reshape(num_seq, seq_len, nx)
-    y = y.reshape(num_seq, seq_len, nx)
+    y = y.reshape(num_seq, seq_len, ny)
 
     model = MixtureDensityNetwork(nx, ny, n_components=n_components, hidden_dim=50, noise_type=NoiseType.DIAGONAL)
     optimizer = optim.Adam(model.parameters(), lr=0.005)
